@@ -1,0 +1,79 @@
+:root {
+  --display-background-color1: #8f8fa5;
+  --display-background-color2: black;
+  --display-color: chartreuse;
+}
+
+* {
+  box-sizing: border-box;
+  font-family: sans-serif;
+  font-weight: normal;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  background: linear-gradient(
+    var(--display-background-color1),
+    var(--display-background-color2)
+  );
+}
+
+.calculator {
+  display: grid;
+  grid-template-columns: repeat(4, 120px);
+  grid-template-rows: minmax(100px, auto) repeat(5, 90px);
+  gap: 4px;
+  justify-content: center;
+  align-content: center;
+  min-height: 100vh;
+}
+
+.calculator button {
+  font-size: 30px;
+  color: rgb(61, 51, 51);
+  background-color: rgba(255, 244, 233, 0.75);
+  /*border: 2px solid black;*/
+  box-shadow: 5px 5px 5px transparent, -5px -5px 5px transparent,
+    5px 5px 5px #999 inset, -5px -5px 5px #fff inset;
+  transition: color 100ms, box-shadow 200ms;
+  cursor: pointer;
+}
+
+.calculator button:hover {
+  background-color: rgba(255, 255, 255, 0.9);
+}
+
+.span-two {
+  grid-row: span 2;
+}
+
+.display {
+  grid-column: 1 / -1;
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+  height: 9em;
+  padding: 10px;
+  box-shadow: 5px 5px 5px transparent, -5px -5px 5px transparent,
+    5px 5px 5px #999 inset, -5px -5px 5px #fff inset;
+  background-color: rgba(235, 228, 221, 0.85);
+}
+
+#expression {
+  display: flex;
+  align-items: center;
+  height: 2.5rem;
+  padding: 0.25rem;
+  margin: 0.25rem;
+  background-color: var(--display-background-color2);
+  color: var(--display-color);
+  font-family: "Courier 10 Pitch", monospace;
+  font-size: 2rem;
+  user-select: none;
+}
+
+#history {
+  background-color: var(--display-background-color2);
+  color: var(--display-color);
+}
